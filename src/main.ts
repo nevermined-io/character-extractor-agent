@@ -1,5 +1,3 @@
-// src/main.ts
-
 import {
   AgentExecutionStatus,
   Payments,
@@ -69,14 +67,15 @@ async function run(data: any) {
       const characterData = await characterExtractor.extractCharacters(script);
 
       // Log the extracted character data
-      logger.info(`Extracted Characters: ${characterData}`);
+      logger.info(`Extracted Characters: ${JSON.stringify(characterData)}`);
 
       // Update the step with the character data and mark it as completed
       const updateResult = await payments.query.updateStep(step.did, {
         ...step,
         step_status: AgentExecutionStatus.Completed,
         is_last: true,
-        output: characterData,
+        output: "Character extraction completed.",
+        output_artifacts: characterData, // Store characters in output_artifacts
       });
 
       // Log the completion of the character extraction task
