@@ -26,6 +26,10 @@ This project is part of a larger workflow that explores the interconnection betw
     
     *   Generates realistic character images based on their descriptions.
 
+#### Workflow Diagram:
+
+![[Init Step] --> [generateScript] --> [extractCharacters] --> [generateImagesForCharacters]](https://github.com/nevermined-io/movie-orchestrator-agent/blob/main/flow_img.png?raw=true)
+
 * * *
 
 Table of Contents
